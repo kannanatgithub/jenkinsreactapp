@@ -3,8 +3,14 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'npm install'
+        echo 'Success'
+      }
+    }
+    stage('') {
+      steps {
         sh 'bash ./jenkins/scripts/test.sh'
-        input(message: 'Is Test Success and ready to continue?', ok: 'Yes and Continue to Publish and Execute')
+        input(message: 'Is Test Success and ready to continue?', ok: 'Yes and Continue')
       }
     }
   }
