@@ -7,7 +7,7 @@ pipeline {
         echo 'Success'
       }
     }
-    stage('') {
+    stage('Test') {
       steps {
         sh 'bash ./jenkins/scripts/test.sh'
         input(message: 'Is Test Success and ready to continue?', ok: 'Yes and Continue')
